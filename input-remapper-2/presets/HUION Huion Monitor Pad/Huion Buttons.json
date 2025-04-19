@@ -1,0 +1,158 @@
+[
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 256,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard + mouse",
+        "output_symbol": "KEY_LEFTCTRL+Z",
+        "name": "Tablet Button 1 Left",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 304,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "Insert",
+        "name": "Tablet Button 1 Right",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 305,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "Shift_L+Delete",
+        "name": "Tablet Button 2 Right",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 306,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_PAGEUP",
+        "name": "Tablet Button 3 Right",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 307,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_PAGEDOWN",
+        "name": "Tablet Button 4 Right",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 261,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_LEFTCTRL+KP_Equal",
+        "name": "Tablet Button 6 Left",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 262,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_LEFTCTRL+minus",
+        "name": "Tablet Button 7 Left",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 263,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_LEFTCTRL+0",
+        "name": "Tablet Button 8 Left",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 309,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_LEFTCTRL+KEY_LEFT",
+        "name": "Tablet Button 6 Right",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 310,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_LEFTCTRL+KEY_RIGHT",
+        "name": "Tablet Button 7 Right",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 311,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_LEFTCTRL+KEY_DOWN",
+        "name": "Tablet Button 8 Right",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 257,
+                "origin_hash": "ca9a9821b79d9722acaa453aba754695"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "e",
+        "name": "Tablet Button 2 Left",
+        "mapping_type": "key_macro"
+    }
+]
