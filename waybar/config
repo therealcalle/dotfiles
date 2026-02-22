@@ -1,13 +1,18 @@
 {
-    ///////////////////
-    // Global config //
-    ///////////////////
+    // ╔══════════════════════════════════════════════╗
+    // ║  Waybar Config - Bisexual Color Scheme       ║
+    // ║  Layout: [Stats]   [Workspaces]   [Controls] ║
+    // ╚══════════════════════════════════════════════╝
+
     "layer": "top",
     "position": "top",
-    "margin-left": 0,
-    "margin-bottom": 0,
-    "margin-right": 0,
-    "spacing": 5,
+    "height": 36,
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 0,
+
+    // ── Module Layout ──
     "modules-left": [
         "custom/cpu",
         "custom/gpu",
@@ -18,78 +23,108 @@
     ],
     "modules-right": [
         "wireplumber",
-        "clock"
+        "clock",
+        "custom/power"
     ],
-    /////////////
-    // Modules //
-    /////////////
+
+    // ═══════════════════
+    //  LEFT: System Stats
+    // ═══════════════════
+
     "custom/cpu": {
-    "exec": "~/.config/waybar/modules/cpun.sh",
-    "interval": 2,
-    "format": "CPU: {}",  // Added a space before {} to make it more visible
-    "return-type": "json",
-    "tooltip": true,   // Add this to enable tooltips
-    "markup": "pango"    // Changed to specifically use Pango markup
+        "exec": "~/.config/waybar/modules/cpu.sh",
+        "interval": 2,
+        "format": "{}",
+        "return-type": "json",
+        "tooltip": true,
+        "markup": "pango",
+        "on-click": "alacritty -e btop"
     },
+
     "custom/gpu": {
         "exec": "~/.config/waybar/modules/gpu.sh",
         "interval": 2,
-        "format": "GPU: {}",
+        "format": "{}",
         "return-type": "json",
         "tooltip": true,
-        "markup": "pango"
+        "markup": "pango",
+        "on-click": "alacritty -e nvtop 2>/dev/null || alacritty -e watch -n1 nvidia-smi"
     },
+
     "memory": {
         "interval": 2,
-        "format": "RAM: <span color='#00E5FF'>{percentage}%</span> | <span color='#FFB300'>{swapPercentage}%</span>",
-        "on-click": "alacritty -e btop",
-        "tooltip-format": ""
+        "format": "<span color='#6b9dd4'>󰳌 {percentage}%</span> <span color='#7a6f96'>·</span> <span color='#6b9dd4'>󰾴 {swapPercentage}%</span>",
+        "tooltip-format": "┌─ RAM\n├─ Used:  {used:0.1f} / {total:0.1f} GiB ({percentage}%)\n├─ Available: {avail:0.1f} GiB\n└─ Swap: {swapUsed:0.1f} / {swapTotal:0.1f} GiB ({swapPercentage}%)",
+        "on-click": "alacritty -e btop"
     },
-    "clock": {
-        "format": "{:L%H:%M | %a | %d %b %Y}",
-        "tooltip-format": "",
-        "tooltip": false,
-        "markup": "pango"
-    },
+
+    // ═══════════════════
+    //  CENTER: Workspaces
+    // ═══════════════════
+
     "hyprland/workspaces": {
         "all-outputs": true,
-        "format": "{name}",
+        "format": "{icon}",
         "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九",
-            "10": "十"
+            "1":  "<span color='#d4679a'>1</span>",
+            "2":  "<span color='#cb6caa'>2</span>",
+            "3":  "<span color='#c271b9'>3</span>",
+            "4":  "<span color='#b977c9'>4</span>",
+            "5":  "<span color='#b07cd8'>5</span>",
+            "6":  "<span color='#a283d7'>6</span>",
+            "7":  "<span color='#9489d7'>7</span>",
+            "8":  "<span color='#8790d6'>8</span>",
+            "9":  "<span color='#7996d5'>9</span>",
+            "10": "<span color='#6b9dd4'>10</span>",
+            "default": "<span color='#7a6f96'>{name}</span>"
         },
         "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
         "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
         "sort-by-number": true,
         "active-only": false
     },
+
+    // ═══════════════════
+    //  RIGHT: Controls
+    // ═══════════════════
+
     "wireplumber": {
         "on-click": "pavucontrol",
-        "tooltip-format": "",
-        "format": "{icon}  <span color='#00E5FF'>{volume}%</span>",
-        "format-muted": " ",
-        "format-source": "",
-        "format-source-muted": "",
+        "scroll-step": 5,
+        "format": "<span color='#d4679a'>{icon} {volume}%</span>",
+        "format-muted": "<span color='#7a6f96'>󰖁 muted</span>",
         "format-icons": {
-            "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
-            "phone": " ",
-            "portable": " ",
-            "car": " ",
-            "default": [
-                " ",
-                " ",
-                " "
-            ]
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "phone": "󰏲",
+            "portable": "󰏲",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "tooltip-format": "Volume: {volume}%\nDevice: {node_name}"
+    },
+
+    "clock": {
+        "format": "<span color='#b07cd8'>{:%H:%M <span color='#7a6f96'>·</span> %a <span color='#7a6f96'>·</span> %d %b %Y}</span>",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#d4679a'><b>{}</b></span>",
+                "days": "<span color='#e0d6f0'>{}</span>",
+                "weeks": "<span color='#7a6f96'>W{}</span>",
+                "weekdays": "<span color='#b07cd8'><b>{}</b></span>",
+                "today": "<span color='#6b9dd4'><b><u>{}</u></b></span>"
+            }
         }
+    },
+
+    "custom/power": {
+        "format": "<span color='#6b9dd4'>⏻</span>",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/modules/power.sh"
     }
 }

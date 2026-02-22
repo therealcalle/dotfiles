@@ -1,62 +1,162 @@
+/* ╔══════════════════════════════════════════════════╗
+ * ║  Waybar Style - Bisexual Color Scheme            ║
+ * ║                                                   ║
+ * ║  Palette:                                         ║
+ * ║    Pink:    #d4679a   (CPU, Audio, Power)         ║
+ * ║    Purple:  #b07cd8   (GPU, Workspaces active)    ║
+ * ║    Blue:    #6b9dd4   (RAM)                       ║
+ * ║    Text:    #e0d6f0   (Primary text)              ║
+ * ║    Dim:     #7a6f96   (Separators, inactive)      ║
+ * ║    Dark:    #151020   (Tooltips, deepest BG)      ║
+ * ╚══════════════════════════════════════════════════╝ */
+
+/* ── GTK Color Definitions ── */
+@define-color pink    #d4679a;
+@define-color purple  #b07cd8;
+@define-color blue    #6b9dd4;
+@define-color text    #e0d6f0;
+@define-color dim     #7a6f96;
+@define-color dark    #151020;
+
+/* ═══════════════════════════════
+ *  Global Reset
+ * ═══════════════════════════════ */
+
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
-  transition: all 0.3s ease;
-  color: rgba(255, 255, 255, 1);
+    font-family: "MesloLGS Nerd Font", "MesloLGS Nerd Font Mono", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    color: @text;
 }
 
-#waybar {
-  background: transparent;
+window#waybar {
+    background: transparent;
 }
 
-#clock,
-#wireplumber,
-#memory,
+/* ═══════════════════════════════
+ *  Shared Module Style
+ *  Everything uses the same
+ *  transparent + underline pattern
+ * ═══════════════════════════════ */
+
+#custom-cpu,
 #custom-gpu,
+#memory,
+#wireplumber,
+#clock,
+#custom-power {
+    background: transparent;
+    padding: 0 10px;
+    margin: 4px 2px;
+    padding-bottom: 3px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    /* Faint bottom line — always visible */
+    box-shadow: inset 0 -2px 0 alpha(@dim, 0.2);
+}
+
+/* ── Color-coded underlines per module ── */
+
+/* Pink: CPU */
 #custom-cpu {
-  background: rgba(24, 26, 21, 1);
-  border: 1px solid rgba(69, 111, 101, 1);
-  padding: 0 10px;
-  margin: 5px 2px;
-  border-radius: 3px;
+    box-shadow: inset 0 -2px 0 alpha(@pink, 0.3);
+}
+#custom-cpu:hover {
+    background-image: linear-gradient(transparent, alpha(@pink, 0.15));
+    box-shadow: inset 0 -2px 0 @pink;
+}
+
+/* Purple: GPU */
+#custom-gpu {
+    box-shadow: inset 0 -2px 0 alpha(@purple, 0.3);
+}
+#custom-gpu:hover {
+    background-image: linear-gradient(transparent, alpha(@purple, 0.15));
+    box-shadow: inset 0 -2px 0 @purple;
+}
+
+/* Blue: RAM */
+#memory {
+    box-shadow: inset 0 -2px 0 alpha(@blue, 0.3);
+}
+#memory:hover {
+    background-image: linear-gradient(transparent, alpha(@blue, 0.15));
+    box-shadow: inset 0 -2px 0 @blue;
+}
+
+/* Pink: Audio */
+#wireplumber {
+    box-shadow: inset 0 -2px 0 alpha(@pink, 0.3);
+}
+#wireplumber:hover {
+    background-image: linear-gradient(transparent, alpha(@pink, 0.15));
+    box-shadow: inset 0 -2px 0 @pink;
+}
+
+/* Purple: Clock */
+#clock {
+    box-shadow: inset 0 -2px 0 alpha(@purple, 0.3);
+}
+#clock:hover {
+    background-image: linear-gradient(transparent, alpha(@purple, 0.15));
+    box-shadow: inset 0 -2px 0 @purple;
+}
+
+/* Blue: Power */
+#custom-power {
+    box-shadow: inset 0 -2px 0 alpha(@blue, 0.3);
+    padding: 0 8px;
+}
+#custom-power:hover {
+    background-image: linear-gradient(transparent, alpha(@blue, 0.2));
+    box-shadow: inset 0 -2px 0 @blue;
+}
+
+/* ═══════════════════════════════
+ *  CENTER: Workspaces
+ * ═══════════════════════════════ */
+
+#workspaces {
+    background: transparent;
+    padding: 0;
 }
 
 #workspaces button {
-  padding: 0 8px;
-  background: transparent;
-  border-radius: 3px;
-  margin: 5px 2px;
-  padding-bottom: 3px;
+    padding: 0 8px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    background: transparent;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    border: none;
+    box-shadow: none;
+    padding-bottom: 3px;
 }
 
 #workspaces button.active {
-  background-image: linear-gradient(transparent, rgba(69, 111, 101, 1));
-  box-shadow: inset 0 -2px 0 rgba(49, 255, 252, 1);
+    background-image: linear-gradient(transparent, alpha(@purple, 0.15));
+    box-shadow: inset 0 -2px 0 alpha(@purple, 0.3);
 }
 
 #workspaces button:hover {
-  background-image: linear-gradient(transparent, rgba(69, 111, 101, 0.5));
-  box-shadow: inset 0 -2px 0 rgba(49, 255, 252, 0.5);
+    background-image: linear-gradient(transparent, alpha(@purple, 0.15));
+    box-shadow: inset 0 -2px 0 alpha(@purple, 0.5);
 }
 
-/*tooltip {
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(255, 125, 0, 0.3);
-  border-radius: 3px;
+/* ═══════════════════════════════
+ *  Tooltips
+ * ═══════════════════════════════ */
+
+tooltip {
+    background: @dark;
+    border: 1px solid alpha(@purple, 0.4);
+    border-radius: 8px;
 }
 
 tooltip label {
-  color: #ff7d00;
-  padding: 5px;
-}*/
-
-#clock:hover,
-#wireplumber:hover,
-#memory:hover,
-#custom-gpu:hover,
-#custom-cpu:hover {
-  background: rgba(38, 63, 62, 1);
+    color: @text;
+    padding: 6px 10px;
+    font-size: 12px;
 }
