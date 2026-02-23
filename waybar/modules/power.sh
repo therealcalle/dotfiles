@@ -12,33 +12,18 @@ SHUTDOWN="  Shutdown"
 
 options="${LOCK}\n${LOGOUT}\n${SUSPEND}\n${REBOOT}\n${SHUTDOWN}"
 
-# Rofi theme override for bi color scheme
+# Rofi theme override — inherits bisexual theme, just narrows it for power menu
 rofi_theme='
+@theme "~/.config/rofi/bisexual.rasi"
 window {
-    width: 200px;
-    background-color: #151020;
-    border: 2px solid #b07cd8;
-    border-radius: 12px;
-    padding: 8px;
+    width: 220px;
+}
+inputbar {
+    enabled: false;
 }
 listview {
     lines: 5;
     fixed-height: true;
-    spacing: 4px;
-    background-color: transparent;
-}
-element {
-    padding: 8px 12px;
-    border-radius: 8px;
-    background-color: transparent;
-    text-color: #e0d6f0;
-}
-element selected {
-    background-color: #2a2145;
-    text-color: #b07cd8;
-}
-inputbar {
-    enabled: false;
 }
 '
 
