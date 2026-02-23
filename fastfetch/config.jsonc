@@ -2,54 +2,90 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "type": "builtin",
-    "source": "arch",
+    "source": "arch_small",
+    "color": {
+      "1": "#b07cd8"
+    },
     "padding": {
-      "left": 2
+      "left": 2,
+      "right": 2
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "output": "#e0d6f0",
+      "separator": "#7a6f96"
+    },
+    "key": {
+      "width": 0,
+      "paddingLeft": 0
+    },
+    "brightColor": false,
+    "percent": {
+      "color": {
+        "green": "#6b9dd4",
+        "yellow": "#b07cd8",
+        "red": "#d4679a"
+      }
     }
   },
   "modules": [
+    {
+      "type": "os",
+      "key": " 󰣇 ",
+      "keyColor": "#d4679a"
+    },
+    {
+      "type": "kernel",
+      "key": " 󰌽 ",
+      "keyColor": "#d4679a",
+      "format": "{release}"
+    },
+    {
+      "type": "wm",
+      "key": " 󰖌 ",
+      "keyColor": "#d4679a"
+    },
+    {
+      "type": "separator",
+      "string": "┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈"
+    },
+    {
+      "type": "cpu",
+      "key": " 󰻠 ",
+      "keyColor": "#b07cd8"
+    },
+    {
+      "type": "gpu",
+      "key": " 󰍛 ",
+      "keyColor": "#b07cd8"
+    },
+    {
+      "type": "memory",
+      "key": " 󰑭 ",
+      "keyColor": "#b07cd8"
+    },
+    {
+      "type": "disk",
+      "key": " 󰋊 ",
+      "keyColor": "#b07cd8",
+      "folders": "/"
+    },
+    {
+      "type": "separator",
+      "string": "┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈"
+    },
+    {
+      "type": "monitor",
+      "key": " 󰍹 ",
+      "keyColor": "#6b9dd4",
+      "format": "{width}x{height} @ {refresh-rate}Hz"
+    },
     "break",
     {
-       "type":"os",
-       "key": " ",
-    },
-    {
-    "type": "kernel",
-    "key": " ",
-    },
-    {
-       "type": "terminal",
-       "key": " ",
-    },
-    {
-    "type": "shell",
-    "key": " ",
-    },
-    {
-       "type": "wm",
-       "key": " ",
-    },
-    "break",
-    {
-       "type": "cpu",
-       "key": " ",
-    },
-    {
-       "type": "gpu",
-       "key": " ",
-    },
-    {
-       "type": "memory",
-       "key": " ",
-    },
-    {
-       "type": "disk",
-       "key": " ",
-    },
-    "break",
-    {
-       "type": "monitor",
-       "key": " ",
-    },
+      "type": "colors",
+      "paddingLeft": 3
+    }
   ]
 }
