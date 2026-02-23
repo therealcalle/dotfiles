@@ -1,0 +1,66 @@
+# Bisexual color scheme for Alacritty
+# Pink #d4679a | Purple #b07cd8 | Blue #6b9dd4
+
+[font]
+normal = { family = "MesloLGS Nerd Font", style = "Regular" }
+bold = { family = "MesloLGS Nerd Font", style = "Bold" }
+italic = { family = "MesloLGS Nerd Font", style = "Italic" }
+size = 13.0
+
+[window]
+opacity = 0.85
+padding = { x = 8, y = 8 }
+
+[colors.primary]
+background = "#151020"
+foreground = "#e0d6f0"
+
+[colors.cursor]
+cursor = "#b07cd8"
+text = "#151020"
+
+[colors.vi_mode_cursor]
+cursor = "#d4679a"
+text = "#151020"
+
+[colors.selection]
+background = "#3d2a5c"
+text = "#e0d6f0"
+
+[colors.search.matches]
+background = "#6b9dd4"
+foreground = "#151020"
+
+[colors.search.focused_match]
+background = "#d4679a"
+foreground = "#151020"
+
+[colors.hints.start]
+background = "#b07cd8"
+foreground = "#151020"
+
+[colors.hints.end]
+background = "#6b9dd4"
+foreground = "#151020"
+
+# Normal colors (the 8 base ANSI colors)
+[colors.normal]
+black   = "#1a1229"
+red     = "#d4679a"
+green   = "#8fa7c4"
+yellow  = "#b07cd8"
+blue    = "#6b9dd4"
+magenta = "#c474b0"
+cyan    = "#7bb8d4"
+white   = "#e0d6f0"
+
+# Bright colors
+[colors.bright]
+black   = "#3d2a5c"
+red     = "#e88ab4"
+green   = "#a7c0d8"
+yellow  = "#c99be6"
+blue    = "#8fb8e4"
+magenta = "#d897c8"
+cyan    = "#99cde4"
+white   = "#f0e8ff"
