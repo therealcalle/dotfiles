@@ -1,0 +1,13 @@
+configuration {
+    modi:                "drun";
+    show-icons:          true;
+    icon-theme:          "Oranchelo";
+    terminal:            "alacritty";
+    drun-display-format: "{name}";
+    location:            0;
+    disable-history:     false;
+    hide-scrollbar:      true;
+    sidebar-mode:        false;
+}
+
+@theme "~/.config/rofi/bisexual.rasi"
