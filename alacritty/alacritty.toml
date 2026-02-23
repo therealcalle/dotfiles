@@ -1,12 +1,6 @@
 # Bisexual color scheme for Alacritty
 # Pink #d4679a | Purple #b07cd8 | Blue #6b9dd4
 
-[font]
-normal = { family = "MesloLGS Nerd Font", style = "Regular" }
-bold = { family = "MesloLGS Nerd Font", style = "Bold" }
-italic = { family = "MesloLGS Nerd Font", style = "Italic" }
-size = 13.0
-
 [window]
 opacity = 0.85
 padding = { x = 8, y = 8 }
