@@ -1,0 +1,167 @@
+/* ╔══════════════════════════════════════════════╗
+ * ║  Rofi Theme - Bisexual Color Scheme          ║
+ * ║  Matches waybar: transparent + underlines    ║
+ * ╚══════════════════════════════════════════════╝ */
+
+/* ── Color Palette ── */
+* {
+    pink:       #d4679a;
+    purple:     #b07cd8;
+    blue:       #6b9dd4;
+    text:       #e0d6f0;
+    dim:        #7a6f96;
+    dark:       #151020;
+    dark-t:     #15102099;
+    surface:    #1e183300;
+    transparent: transparent;
+
+    font: "MesloLGS Nerd Font 13";
+
+    background-color: transparent;
+    text-color: @text;
+}
+
+/* ═══════════════════════════════
+ *  Window — barely there
+ * ═══════════════════════════════ */
+
+window {
+    width: 460px;
+    background-color: @dark-t;
+    border: 1px solid;
+    border-color: #d4679a40;
+    border-radius: 8px;
+    padding: 10px 14px;
+    location: center;
+    anchor: center;
+}
+
+mainbox {
+    spacing: 6px;
+    background-color: transparent;
+}
+
+/* ═══════════════════════════════
+ *  Search Bar — underline style
+ *  like a waybar module
+ * ═══════════════════════════════ */
+
+inputbar {
+    children: [textbox-prompt, entry];
+    background-color: transparent;
+    border: 0 0 2px 0 solid;
+    border-color: #6b9dd44d;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0 4px 0 4px;
+}
+
+textbox-prompt {
+    str: "  ";
+    expand: false;
+    padding: 10px 4px 10px 8px;
+    text-color: @blue;
+    background-color: transparent;
+    vertical-align: 0.5;
+}
+
+entry {
+    padding: 10px 14px 10px 0px;
+    text-color: @text;
+    background-color: transparent;
+    placeholder: "Search...";
+    placeholder-color: @blue;
+    cursor-color: @blue;
+}
+
+/* ═══════════════════════════════
+ *  Results List
+ * ═══════════════════════════════ */
+
+listview {
+    columns: 1;
+    lines: 6;
+    fixed-height: true;
+    spacing: 2px;
+    background-color: transparent;
+    border: 0;
+    scrollbar: false;
+    margin: 4px 0 0 0;
+}
+
+/* ═══════════════════════════════
+ *  Result Items — gradient + underline
+ *  same pattern as waybar modules
+ * ═══════════════════════════════ */
+
+element {
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: transparent;
+    text-color: @dim;
+    spacing: 10px;
+    cursor: pointer;
+}
+
+element-icon {
+    size: 28px;
+    background-color: transparent;
+    cursor: inherit;
+}
+
+element-text {
+    vertical-align: 0.5;
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+}
+
+/* ── Normal states ── */
+element normal.normal {
+    text-color: @dim;
+}
+
+element normal.active {
+    text-color: @blue;
+}
+
+/* ── Selected — gradient + underline ── */
+element selected.normal {
+    background-image: linear-gradient(transparent, #b07cd830);
+    text-color: @purple;
+    border: 0 0 2px 0 solid;
+    border-color: #b07cd84d;
+    border-radius: 4px 4px 0px 0px;
+}
+
+element selected.active {
+    background-image: linear-gradient(transparent, #b07cd830);
+    text-color: @purple;
+    border: 0 0 2px 0 solid;
+    border-color: #b07cd84d;
+    border-radius: 4px 4px 0px 0px;
+}
+
+/* ── Alternate rows ── */
+element alternate.normal {
+    text-color: @dim;
+}
+
+/* ═══════════════════════════════
+ *  Hidden / Misc
+ * ═══════════════════════════════ */
+
+mode-switcher {
+    enabled: false;
+}
+
+message {
+    background-color: transparent;
+    border-radius: 0px;
+    padding: 8px 14px;
+}
+
+textbox {
+    text-color: @dim;
+    background-color: transparent;
+}
