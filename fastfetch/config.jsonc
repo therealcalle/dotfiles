@@ -33,6 +33,9 @@
       }
    },
    "modules": [
+      "break",
+      "break",
+      "break",
       {
          "type": "os",
          "key": " 󰣇 ",
